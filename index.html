@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Mahesh Goswami</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <img class="profile-img" src="profile_image.jpg" alt="Profile photo" />
+        <div class="name">Maheshgiri Goswami</div>
+        <div class="tag">Frontend Developer • UI/UX Enthusiast</div>
+
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div style="margin-top:auto;font-size:0.85rem;color:#cbd5e1;text-align:center">
+            © <span id="year-side"></span>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="main-header">
+            <h1>Maheshgiri Goswami — Frontend Developer</h1>
+        </header>
+
+        <section id="about" tabindex="-1">
+            <h2>About Me</h2>
+            <p>Hello! I am a passionate web developer specializing in frontend development. I love creating clean and
+                user-friendly interfaces. Currently, I am focusing on mastering React.js and building modern web apps.
+            </p>
+        </section>
+
+        <section id="skills" tabindex="-1">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">React.js</span>
+            </div>
+        </section>
+
+        <section id="projects" tabindex="-1">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="travel.png" alt="Travel App" />
+                    <h3>Travel App</h3>
+                    <p>A modern and interactive Travel App that helps you explore destinations with ease.</p>
+                    <a href="Travel.html" target="_blank">View details →</a>
+                </div>
+
+                <div class="project">
+                    <img src="fitness.png" alt="Fitness App" />
+                    <h3>Fitness App</h3>
+                    <p>A smart and interactive Fitness App that tracks workouts and progress in real time.</p>
+                    <a href="Fitness.html" target="_blank">View details →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" tabindex="-1">
+            <h2>Resume</h2>
+            <p>You can download my resume here:</p>
+            <p style="margin-top:8px">
+                <a class="btn" href="Resume.pdf" download="Mahesh_Goswami_Resume.pdf">Download Resume</a>
+            </p>
+        </section>
+
+        <section id="contact" tabindex="-1">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:bharatgiriag@gmail.com">bharatgiriag@gmail.com</a></p>
+        </section>
+
+        <footer>
+            © <span id="year-main"></span> Mahesh Goswami. All Rights Reserved.
+        </footer>
+    </main>
+
+    <script>
+        const year = new Date().getFullYear();
+        document.getElementById('year-side').textContent = year;
+        document.getElementById('year-main').textContent = year;
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                const id = href.slice(1);
+                const target = document.getElementById(id);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.focus({ preventScroll: true });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
